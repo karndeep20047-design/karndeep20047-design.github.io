@@ -1,0 +1,826 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karndeep Singh Bhamrah (Sunny) &mdash; Portfolio</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.svg" sizes="any">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&family=Fira+Code:wght@400&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Intro Animation Overlay -->
+    <div class="intro-overlay" id="intro-overlay">
+        <div class="falling-dot" id="falling-dot"></div>
+        <div class="impact-ripple" id="impact-ripple"></div>
+        <div class="impact-ripple" id="impact-ripple-2"></div>
+    </div>
+    
+    <!-- Cinematic Entrance -->
+    <div class="entrance" id="entrance">
+        <div class="entrance-top"></div>
+        <div class="entrance-bottom"></div>
+        
+        <!-- Start Screen with Button -->
+        <div class="start-screen" id="start-screen">
+            <div class="start-title">KARNDEEP SINGH</div>
+            <div class="start-subtitle">Full-Stack Developer &middot; Nairobi</div>
+            <div class="btn-wrapper" id="start-btn">
+                <div class="btn-light"></div>
+                <button class="gradient-btn">ENTER</button>
+                <div class="gradient-layer"></div>
+                <div class="gradient-layer"></div>
+                <span class="text-overlay">ENTER</span>
+            </div>
+        </div>
+        
+        <!-- Loading Animation (shown after click) -->
+        <div class="entrance-content" id="entrance-content">
+            <div class="entrance-initials">KS</div>
+            <div class="entrance-rule"></div>
+            <div class="entrance-role" id="typewriter"></div>
+        </div>
+
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring">
+        <span class="cursor-ring-text">click</span>
+    </div>
+    <div class="cursor-glass-wrapper" id="cursor-glass">
+        <div class="cursor-glass-blur"></div>
+        <svg class="cursor-glass-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="leftGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--glass-left-1)" />
+                    <stop offset="100%" stop-color="var(--glass-left-2)" />
+                </linearGradient>
+                <linearGradient id="rightGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--glass-right-1)" />
+                    <stop offset="100%" stop-color="var(--glass-right-2)" />
+                </linearGradient>
+                <linearGradient id="edgeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--glass-edge-1)" />
+                    <stop offset="100%" stop-color="var(--glass-edge-2)" />
+                </linearGradient>
+            </defs>
+            <path d="M4 2 L20 10 L12 12 L10 20 Z" fill="var(--glass-base)" stroke="url(#edgeGlow)" stroke-width="1"
+                stroke-linejoin="round" />
+            <path d="M4 2 L12 12 L10 20 Z" fill="url(#leftGlass)" />
+            <path d="M4 2 L20 10 L12 12 Z" fill="url(#rightGlass)" />
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-wrap" id="main-nav">
+        <a href="#hero" class="nav-brand">
+            <span class="brand-abbr">KS</span><span class="brand-full">KARNDEEP SINGH</span>
+        </a>
+        <div class="nav-links" id="nav-links-container">
+            <div class="nav-pill" id="nav-pill"></div>
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-controls">
+            <label class="theme-switch" aria-label="Toggle Theme">
+                <input type="checkbox" class="theme-cb" id="theme-toggle">
+                <div class="theme-switch-toggle">
+                    <div class="switch-left">
+                        <svg class="switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </div>
+                    <div class="switch-right">
+                        <svg class="switch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </label>
+            <a href="#contact" class="nav-cta">Say Hello</a>
+            <button class="mobile-menu-btn" id="mobile-btn">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-menu">
+        <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="24" height="24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="mobile-bg-mark">&sect;</div>
+        <a href="#hero" class="mobile-link" style="transition-delay: 100ms">Home</a>
+        <a href="#about" class="mobile-link" style="transition-delay: 180ms">About</a>
+        <a href="#work" class="mobile-link" style="transition-delay: 260ms">Work</a>
+        <a href="#skills" class="mobile-link" style="transition-delay: 340ms">Skills</a>
+        <a href="#contact" class="mobile-link" style="transition-delay: 420ms">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero" class="section-hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                <h1 class="hero-name" id="hero-name">
+                    <span class="word">KARNDEEP</span> <span class="word">SINGH</span>
+                </h1>
+                <h2 class="hero-role" id="hero-role">FULL-STACK DEVELOPER & DESIGNER</h2>
+                <p class="hero-tagline" id="hero-tagline">
+                    Building products that solve real problems &mdash; from GIS marketplaces to fintech dashboards<span class="cursor-blink">_</span>
+                </p>
+                <div class="hero-actions" id="hero-actions">
+                    <a href="#work" class="btn-solid">View My Work</a>
+                    <a href="#" class="btn-ghost" download>Download CV</a>
+                </div>
+                </div>
+                <div class="hero-globe-wrap" id="hero-globe-wrap" aria-hidden="true">
+                    <canvas id="hero-globe-canvas"></canvas>
+                    <span class="hero-globe-greeting" id="hero-globe-greeting">Hi</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section-about">
+            <div class="section-number">01</div>
+            <div class="about-bg-text">ABOUT</div>
+            <div class="about-content">
+                <div class="section-label">001 &mdash; Biography</div>
+                <p class="about-text">
+                    I&rsquo;m <strong>Karndeep Singh Bhamrah</strong> (Sunny) &mdash; I&rsquo;m driven by building software that closes
+                    real gaps in the market by implementing user experienced systems.
+                </p>
+                <blockquote class="about-quote">
+                    &ldquo;Don&rsquo;t judge a book by its cover, but in design, the cover is the first handshake. I care about
+                    systems that work flawlessly and interfaces people actually want to use.&rdquo;
+                </blockquote>
+                <p class="about-text about-text-secondary">
+                    I combine full-stack engineering with graphic design. Fast learner, requirements analysis, problem
+                    solving, teamwork; Scrum Master on UniScope&rsquo;s 6-person Agile team. Open to software, web dev,
+                    data/AI and IT roles, remote or flexible &middot; based in Nairobi.
+                </p>
+                <hr class="about-hr" />
+                <div class="about-footer">
+                    <div class="about-facts">
+                        <div>BSc Computing &middot; Class of 2026</div>
+                        <div>Nairobi, Kenya</div>
+                        <div>Full-stack &middot;image.png Design</div>
+                    </div>
+                    <div class="magnetic-btn-wrap">
+                        <a href="#" class="btn-ghost magnetic-btn" id="cv-btn" download>
+                            <span class="btn-text">Download CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work -->
+        <section id="work" class="section-work">
+            <div class="section-number">02</div>
+            <div class="section-label">002 &mdash; Work</div>
+            <h2 class="section-heading reveal">Selected Works</h2>
+            <div class="work-rule"></div>
+
+            <div class="work-preview" id="work-preview" aria-hidden="true">
+                <div class="work-preview-viewport">
+                    <div class="work-preview-strip" id="work-preview-strip"></div>
+                </div>
+            </div>
+
+            <div class="work-list reveal" id="work-list">
+                <article class="work-row" tabindex="0" role="button" data-project="afrispace"
+                    data-preview="Images/Afrispace/landing%20page.png" data-preview-alt="Afri Space landing page"
+                    aria-label="View Afri Space project details">
+                    <span class="work-row-num">01</span>
+                    <div class="work-row-main">
+                        <h3 class="work-row-title">Afri Space</h3>
+                        <p class="work-row-desc">Map-based billboard marketplace for Kenya &mdash; Leaflet GIS, M-Pesa STK Push, three role-based portals.</p>
+                    </div>
+                    <span class="work-row-cat">Full-Stack &middot; GIS &middot; Fintech</span>
+                    <span class="work-row-hint">Click to explore</span>
+                </article>
+                <article class="work-row" tabindex="0" role="button" data-project="nexpesa"
+                    data-preview="Images/Nexpesa/landing%20page.png" data-preview-alt="NexPesa dashboard"
+                    aria-label="View NexPesa project details">
+                    <span class="work-row-num">02</span>
+                    <div class="work-row-main">
+                        <h3 class="work-row-title">NexPesa</h3>
+                        <p class="work-row-desc">Personal finance & insights &mdash; cash-flow analytics, savings goals, Supabase RLS.</p>
+                    </div>
+                    <span class="work-row-cat">React &middot; TypeScript &middot; Supabase</span>
+                    <span class="work-row-hint">Click to explore</span>
+                </article>
+                <article class="work-row" tabindex="0" role="button" data-project="uniscope"
+                    data-preview="Images/UniScope/user%20llogin%20selection%20page.png" data-preview-alt="UniScope portal selection"
+                    aria-label="View UniScope Magazine project details">
+                    <span class="work-row-num">03</span>
+                    <div class="work-row-main">
+                        <h3 class="work-row-title">UniScope Magazine</h3>
+                        <p class="work-row-desc">University magazine CMS &mdash; Scrum Master & lead dev, 5 roles, PHPMailer, ZIP export.</p>
+                    </div>
+                    <span class="work-row-cat">PHP &middot; MySQL &middot; Enterprise Web</span>
+                    <span class="work-row-hint">Click to explore</span>
+                </article>
+            </div>
+        </section>
+
+        <div class="project-lightbox" id="project-lightbox" aria-hidden="true">
+            <div class="project-lightbox-backdrop" id="project-lightbox-backdrop"></div>
+            <div class="project-lightbox-panel" role="dialog" aria-modal="true" aria-label="Full size image">
+                <button type="button" class="project-lightbox-close" id="project-lightbox-close" aria-label="Close image">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <img class="project-lightbox-img" id="project-lightbox-img" src="" alt="">
+                <p class="project-lightbox-caption" id="project-lightbox-caption"></p>
+            </div>
+        </div>
+
+        <div class="project-overlay" id="project-overlay" aria-hidden="true">
+            <div class="project-curtain" id="project-curtain" aria-hidden="true">
+                <div class="project-curtain-panel"></div>
+            </div>
+            <div class="project-page" id="project-page" role="dialog" aria-modal="true" aria-labelledby="project-page-title">
+                <button type="button" class="project-page-close" id="project-page-close" aria-label="Close project">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="project-page-scroll" id="project-page-scroll"></div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <section id="skills" class="section-skills">
+            <div class="section-number">03</div>
+            <div class="section-label reveal">003 &mdash; Skills</div>
+            <h2 class="section-heading reveal">The Craft</h2>
+
+            <div class="skills-columns reveal">
+                <div class="skill-col">
+                    <h3 class="skill-head">FRONTEND</h3>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> React, Vue.js, TypeScript</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Tailwind, Bootstrap, Leaflet.js</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Recharts, Responsive UI</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Figma, Wireframing</div>
+                </div>
+                <div class="skill-col">
+                    <h3 class="skill-head">BACKEND & DATA</h3>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> PHP &middot; Laravel &middot; Node.js</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> MySQL &middot; PostgreSQL &middot; Supabase</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> CRUD &middot; REST APIs &middot; RLS</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Python &middot; Matplotlib &middot; Data Viz</div>
+                </div>
+                <div class="skill-col">
+                    <h3 class="skill-head">TOOLS & MORE</h3>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Git, Docker, Vercel, Cloudflare</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> M-Pesa Daraja, PHPMailer, ngrok</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> Agile/Scrum, UML, ERD</div>
+                    <div class="skill-item"><span class="skill-dash">&mdash;</span> AI-Assisted Dev, Prompt Engineering</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-contact">
+            <div class="section-number">04</div>
+            <div class="section-label reveal">004 &mdash; Contact</div>
+            <h2 class="contact-heading reveal">Let's make something <span class="italic-sienna">worth
+                    remembering.</span></h2>
+
+            <a href="mailto:karndeep20047@gmail.com" class="contact-email reveal">karndeep20047@gmail.com</a>
+            <p class="contact-phone reveal">+254 740 350 866 &middot; Nairobi, Kenya</p>
+
+            <div class="social-links reveal">
+                <a href="#" class="social-icon" data-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    <span class="social-tooltip">GitHub</span>
+                </a>
+                <a href="https://wa.me/254740350866" class="social-icon" data-label="WhatsApp"
+                    target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-3.3 6.7 8.5 8.5 0 0 1-6.6 2.1 8.38 8.38 0 0 1-3.9-1L3 21l1.7-4.6a8.38 8.38 0 0 1-1-3.9 8.5 8.5 0 0 1 2.1-6.6 8.38 8.38 0 0 1 6.7-3.3h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    <span class="social-tooltip">WhatsApp</span>
+                </a>
+            </div>
+
+            <div class="contact-footer reveal">Open to software, web dev, data/AI & IT roles &middot; Remote or flexible &middot; 2026</div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* --- Theme Initialization --- */
+            let savedTheme = 'light';
+            try {
+                savedTheme = localStorage.getItem('theme') || 'light';
+            } catch (err) {
+                // Some iOS/file:// contexts can block storage access.
+                savedTheme = 'light';
+            }
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            /* --- Intro Animation: Falling Dot & Circle Reveal --- */
+            const introOverlay = document.getElementById('intro-overlay');
+            const fallingDot = document.getElementById('falling-dot');
+            const impactRipple = document.getElementById('impact-ripple');
+            const impactRipple2 = document.getElementById('impact-ripple-2');
+            const entrance = document.getElementById('entrance');
+            const startScreen = document.getElementById('start-screen');
+            const entranceContent = document.getElementById('entrance-content');
+            const startBtn = document.getElementById('start-btn');
+            const startButtonInner = startBtn ? startBtn.querySelector('.gradient-btn') : null;
+            const typewriter = document.getElementById('typewriter');
+
+            /* Lock scroll while entrance screens are visible */
+            function lockScroll() {
+                document.documentElement.classList.add('scroll-locked');
+            }
+            function unlockScroll() {
+                document.documentElement.classList.remove('scroll-locked');
+            }
+            lockScroll();
+
+            const isMobileIntro = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+            function runIntroAnimation() {
+                const btnRect = startBtn.getBoundingClientRect();
+                const targetX = btnRect.left + btnRect.width / 2;
+                const targetY = btnRect.top + btnRect.height / 2;
+
+                if (isMobileIntro) {
+                    // MOBILE: Simple fade reveal
+                    introOverlay.style.transition = 'opacity 0.6s ease';
+                    introOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        introOverlay.classList.add('hidden');
+                        startScreen.classList.add('visible');
+                    }, 600);
+                    return;
+                }
+
+                // DESKTOP: Lightweight glow-dot intro animation
+                const fallDuration = 800;
+                const bounceDuration = 300;
+                const secondFallDuration = 200;
+
+                fallingDot.style.opacity = '1';
+                fallingDot.classList.add('falling');
+
+                fallingDot.animate([
+                    { transform: `translate(${targetX - 7}px, -20px)`, opacity: 1 },
+                    { transform: `translate(${targetX - 7}px, ${targetY - 9}px)`, opacity: 1 }
+                ], {
+                    duration: fallDuration,
+                    easing: 'cubic-bezier(0.55, 0, 1, 0.45)',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => {
+                    fallingDot.classList.remove('falling');
+                    fallingDot.classList.add('landed');
+
+                    impactRipple.style.left = `${targetX}px`;
+                    impactRipple.style.top = `${targetY}px`;
+                    impactRipple.classList.add('animate');
+
+                    fallingDot.animate([
+                        { transform: `translate(${targetX - 7}px, ${targetY - 9}px)` },
+                        { transform: `translate(${targetX - 7}px, ${targetY - 109}px)` }
+                    ], {
+                        duration: bounceDuration,
+                        easing: 'cubic-bezier(0, 0, 0.2, 1)',
+                        fill: 'forwards'
+                    });
+
+                    setTimeout(() => fallingDot.classList.remove('landed'), 100);
+
+                    setTimeout(() => {
+                        fallingDot.animate([
+                            { transform: `translate(${targetX - 7}px, ${targetY - 109}px)` },
+                            { transform: `translate(${targetX - 7}px, ${targetY - 9}px)` }
+                        ], {
+                            duration: secondFallDuration,
+                            easing: 'cubic-bezier(0.55, 0, 1, 0.45)',
+                            fill: 'forwards'
+                        });
+
+                        setTimeout(() => fallingDot.classList.add('landed'), secondFallDuration - 20);
+
+                        setTimeout(() => {
+                            impactRipple2.style.left = `${targetX}px`;
+                            impactRipple2.style.top = `${targetY}px`;
+                            impactRipple2.classList.add('animate');
+
+                            fallingDot.animate([
+                                { transform: `translate(${targetX - 7}px, ${targetY - 9}px) scale(1)`, boxShadow: '0 0 20px 8px rgba(255,255,255,0.6)' },
+                                { transform: `translate(${targetX - 7}px, ${targetY - 9}px) scale(3)`, boxShadow: '0 0 60px 30px rgba(255,255,255,0.8)' }
+                            ], {
+                                duration: 300,
+                                easing: 'ease-out',
+                                fill: 'forwards'
+                            });
+
+                            setTimeout(() => {
+                                fallingDot.style.opacity = '0';
+                                
+                                // Circular reveal using clip-path (lightweight)
+                                const maxRadius = Math.max(window.innerWidth, window.innerHeight) * 1.5;
+                                let radius = 0;
+                                let velocity = 3;
+                                
+                                function expandCircle() {
+                                    velocity += 0.4;
+                                    radius += velocity;
+                                    
+                                    introOverlay.style.clipPath = `circle(${radius}px at ${targetX}px ${targetY}px)`;
+                                    introOverlay.style.webkitClipPath = `circle(${radius}px at ${targetX}px ${targetY}px)`;
+                                    // Invert: we want the circle to reveal what's behind, so clip the overlay away
+                                    introOverlay.style.clipPath = `polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, ${targetX}px ${targetY - radius}px, ${targetX - radius}px ${targetY}px, ${targetX}px ${targetY + radius}px, ${targetX + radius}px ${targetY}px, ${targetX}px ${targetY - radius}px)`;
+                                    
+                                    if (radius < maxRadius) {
+                                        requestAnimationFrame(expandCircle);
+                                    } else {
+                                        introOverlay.classList.add('hidden');
+                                        startScreen.classList.add('visible');
+                                    }
+                                }
+                                
+                                // Use mask-image for proper circular cutout reveal
+                                function expandReveal() {
+                                    velocity += 0.35;
+                                    radius += velocity;
+                                    
+                                    introOverlay.style.webkitMaskImage = `radial-gradient(circle ${radius}px at ${targetX}px ${targetY}px, transparent 100%, black 100%)`;
+                                    introOverlay.style.maskImage = `radial-gradient(circle ${radius}px at ${targetX}px ${targetY}px, transparent 100%, black 100%)`;
+                                    
+                                    if (radius < maxRadius) {
+                                        requestAnimationFrame(expandReveal);
+                                    } else {
+                                        introOverlay.classList.add('hidden');
+                                        introOverlay.style.maskImage = '';
+                                        introOverlay.style.webkitMaskImage = '';
+                                        startScreen.classList.add('visible');
+                                    }
+                                }
+                                
+                                requestAnimationFrame(expandReveal);
+                            }, 180);
+                        }, secondFallDuration);
+                    }, bounceDuration);
+                }, fallDuration);
+            }
+
+            setTimeout(runIntroAnimation, 300);
+
+            let introStarted = false;
+            let introFinished = false;
+
+            function finalizePortfolioReveal() {
+                if (introFinished) return;
+                introFinished = true;
+
+                const heroName = document.getElementById('hero-name');
+                const heroRole = document.getElementById('hero-role');
+                const heroTagline = document.getElementById('hero-tagline');
+                const heroActions = document.getElementById('hero-actions');
+
+                if (heroName) heroName.classList.add('visible');
+                if (heroRole) heroRole.classList.add('visible');
+                if (heroTagline) heroTagline.classList.add('visible');
+                if (heroActions) heroActions.classList.add('visible');
+
+                unlockScroll();
+                if (entrance) {
+                    entrance.classList.add('split');
+                    entrance.style.display = 'none';
+                }
+            }
+
+            /* Portfolio reveal after ENTER */
+            function beginPortfolioReveal() {
+                if (typewriter) typewriter.innerHTML = '';
+                if (entrance) entrance.classList.remove('draw-rule');
+                if (entranceContent) entranceContent.classList.remove('visible');
+
+                const splitDelay = 420;
+                setTimeout(() => {
+                    if (entrance) entrance.classList.add('split');
+
+                    setTimeout(() => {
+                        finalizePortfolioReveal();
+                    }, 200);
+                }, splitDelay);
+
+                // Fallback for mobile Safari timing/render edge cases.
+                setTimeout(() => {
+                    finalizePortfolioReveal();
+                }, 1800);
+            }
+
+            /* --- Entrance Animation Sequence (after clicking ENTER) --- */
+            function startLoadingAnimation() {
+                if (introStarted) return;
+                introStarted = true;
+                startScreen.classList.add('hidden');
+                startScreen.classList.remove('visible');
+                beginPortfolioReveal();
+            }
+
+            // Start button click handler
+            startBtn.addEventListener('click', startLoadingAnimation);
+            if (startButtonInner) {
+                startButtonInner.addEventListener('click', startLoadingAnimation);
+            }
+            
+            // Also allow Enter key to start
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && startScreen.classList.contains('visible')) {
+                    startLoadingAnimation();
+                }
+            });
+
+            /* --- Theme Toggle Logic --- */
+            const themeCheckbox = document.getElementById('theme-toggle');
+            // Sync checkbox with saved theme
+            themeCheckbox.checked = savedTheme === 'dark';
+
+            themeCheckbox.addEventListener('change', () => {
+                const newTheme = themeCheckbox.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                try {
+                    localStorage.setItem('theme', newTheme);
+                } catch (err) {
+                    // Ignore storage write failures in restricted contexts.
+                }
+            });
+
+            /* --- Mobile Menu --- */
+            const mobileBtn = document.getElementById('mobile-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileCloseBtn = document.getElementById('mobile-close-btn');
+            let menuOpen = false;
+
+            function toggleMobileMenu() {
+                menuOpen = !menuOpen;
+                if (menuOpen) {
+                    mobileMenu.classList.add('active');
+                } else {
+                    mobileMenu.classList.remove('active');
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMobileMenu);
+            mobileCloseBtn.addEventListener('click', toggleMobileMenu);
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (menuOpen) toggleMobileMenu();
+                });
+            });
+
+            /* --- Nav Scroll & Ink Blot --- */
+            const nav = document.getElementById('main-nav');
+            const pill = document.getElementById('nav-pill');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        if (window.scrollY > 80) nav.classList.add('scrolled');
+                        else nav.classList.remove('scrolled');
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            function updatePill(link) {
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const containerRect = document.getElementById('nav-links-container').getBoundingClientRect();
+                pill.style.opacity = '1';
+                pill.style.width = `${rect.width}px`;
+                pill.style.transform = `translateX(${rect.left - containerRect.left}px)`;
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
+
+            // Init pill position
+            setTimeout(() => {
+                const active = document.querySelector('.nav-link.active');
+                if (active) updatePill(active);
+            }, 1000);
+
+            // Scroll-based section detection (more reliable than IntersectionObserver for nav)
+            function updateActiveSection() {
+                const scrollPos = window.scrollY + window.innerHeight / 3;
+                let currentSection = 'hero';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                const link = document.querySelector(`.nav-link[href="#${currentSection}"]`);
+                if (link && !link.classList.contains('active')) {
+                    updatePill(link);
+                }
+            }
+
+            let sectionTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!sectionTicking) {
+                    requestAnimationFrame(() => {
+                        updateActiveSection();
+                        sectionTicking = false;
+                    });
+                    sectionTicking = true;
+                }
+            }, { passive: true });
+            updateActiveSection();
+
+            // Hover pill behavior
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => updatePill(link));
+            });
+            document.getElementById('nav-links-container').addEventListener('mouseleave', () => {
+                const active = document.querySelector('.nav-link.active');
+                if (active) updatePill(active);
+            });
+
+            /* --- Custom Cursor --- */
+            const dot = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            const glass = document.getElementById('cursor-glass');
+
+            // Mouse tracking with spring physics
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let ringX = mouseX;
+            let ringY = mouseY;
+            let ringVX = 0;
+            let ringVY = 0;
+            let isHovering = false;
+            
+            // Spring physics parameters - smoother feel
+            const stiffness = 120;
+            const damping = 20;
+            const mass = 0.6;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
+                glass.style.transform = `translate(${mouseX - 6}px, ${mouseY - 3}px)`;
+            }, { passive: true });
+
+            const renderCursor = () => {
+                const dx = mouseX - ringX;
+                const dy = mouseY - ringY;
+                
+                const springForceX = stiffness * dx;
+                const springForceY = stiffness * dy;
+                const dampingForceX = damping * ringVX;
+                const dampingForceY = damping * ringVY;
+                
+                const ax = (springForceX - dampingForceX) / mass;
+                const ay = (springForceY - dampingForceY) / mass;
+                
+                ringVX += ax * 0.016;
+                ringVY += ay * 0.016;
+                ringX += ringVX * 0.016;
+                ringY += ringVY * 0.016;
+                
+                const offset = isHovering ? 24 : 14;
+                ring.style.transform = `translate(${ringX - offset}px, ${ringY - offset}px)`;
+                
+                requestAnimationFrame(renderCursor);
+            };
+            
+            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                renderCursor();
+            }
+
+            // Hover states
+            const interactiveElements = document.querySelectorAll('a, button, input, textarea, .magnetic-btn, .work-row, .skill-item, label, .project-page-close, .hero-globe-wrap, .project-gallery-btn, .project-lightbox-close');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    isHovering = true;
+                    ring.classList.add('hover');
+                    dot.classList.add('hover');
+                    glass.classList.add('hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    isHovering = false;
+                    ring.classList.remove('hover');
+                    dot.classList.remove('hover');
+                    glass.classList.remove('hover');
+                });
+            });
+
+            /* --- Magnetic Button --- */
+            const magnetics = document.querySelectorAll('.magnetic-btn');
+            magnetics.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) rotate(${x * 0.05}deg)`;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0px, 0px) rotate(0deg)';
+                });
+            });
+
+            /* --- Download CV Loading Simulation --- */
+            const cvBtn = document.getElementById('cv-btn');
+            const cvText = cvBtn.querySelector('.btn-text');
+            cvBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const originalText = cvText.innerText;
+                cvText.innerText = "\u2193 Downloading";
+                setTimeout(() => {
+                    cvText.innerText = originalText;
+                    // Trigger actual download logic here if file exists
+                    // window.location.href = "resume.pdf";
+                }, 1200);
+            });
+
+            /* --- Scroll Reveals --- */
+            const revealElements = document.querySelectorAll('.reveal, .section-about, .section-work');
+            const revealOptions = { rootMargin: '0px 0px -100px 0px', threshold: 0.1 };
+            const revealObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+            revealElements.forEach(el => revealObserver.observe(el));
+
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/hero-globe.js"></script>
+    <script src="js/project-experience.js"></script>
+</body>
+
+</html>

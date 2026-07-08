@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NexPesa</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#0a0a0f;color:#e8e8f0;min-height:100vh;padding:32px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.brand{font-weight:700;font-size:1.2rem;background:linear-gradient(90deg,#a78bfa,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px}
+.card label{font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.card strong{display:block;font-size:1.6rem;margin-top:8px}
+.chart{background:rgba(255,255,255,.04);border-radius:16px;padding:24px;height:280px;border:1px solid rgba(255,255,255,.08)}
+.chart h3{font-size:.85rem;color:#888;margin-bottom:16px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:180px;padding-top:20px}
+.bars div{flex:1;background:linear-gradient(180deg,#6366f1,#4f46e5);border-radius:6px 6px 0 0}
+</style>
+</head>
+<body>
+<header><div class="brand">NexPesa</div><span style="color:#888;font-size:.85rem">Dashboard</span></header>
+<div class="grid">
+<div class="card"><label>Balance</label><strong>KES 42,500</strong></div>
+<div class="card"><label>Income</label><strong>KES 68,200</strong></div>
+<div class="card"><label>Spending</label><strong>KES 25,700</strong></div>
+<div class="card"><label>Saved</label><strong>KES 12,400</strong></div>
+</div>
+<div class="chart"><h3>Cash flow — 6 months</h3>
+<div class="bars"><div style="height:45%"></div><div style="height:62%"></div><div style="height:55%"></div><div style="height:78%"></div><div style="height:70%"></div><div style="height:90%"></div></div>
+</div>
+</body>
+</html>
