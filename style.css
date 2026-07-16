@@ -2955,6 +2955,11 @@
 }
 
 /* Flow Wrapper Button */
+@keyframes flowGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
 .migration-flow-wrapper {
     position: relative;
     width: 100%;

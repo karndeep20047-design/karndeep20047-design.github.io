@@ -849,12 +849,23 @@
             const modal = document.getElementById('migration-modal');
             const pill = document.getElementById('migration-pill');
             const btnNo = document.getElementById('migration-btn-no');
+            const startBtn = document.getElementById('start-btn'); // The Enter button
 
-            // Show center modal after 5 seconds
-            setTimeout(() => {
-                overlay.classList.add('active');
-                modal.classList.add('active');
-            }, 5000);
+            // Show center modal after 5 seconds ONLY AFTER start button is clicked
+            if (startBtn) {
+                startBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        overlay.classList.add('active');
+                        modal.classList.add('active');
+                    }, 5000);
+                });
+            } else {
+                // Fallback if start-btn is missing
+                setTimeout(() => {
+                    overlay.classList.add('active');
+                    modal.classList.add('active');
+                }, 5000);
+            }
 
             // Dismiss modal and trigger pill
             const dismissModal = () => {
