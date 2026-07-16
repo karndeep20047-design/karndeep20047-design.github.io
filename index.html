@@ -851,6 +851,27 @@
             const btnNo = document.getElementById('migration-btn-no');
             const startBtn = document.getElementById('start-btn'); // The Enter button
 
+            // --- Cursor suppression helpers ---
+            // When over the migration UI, stop the glass hover effect from hiding the cursor
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorRing = document.getElementById('cursor-ring');
+            const cursorGlass = document.getElementById('cursor-glass');
+
+            const suppressCursorHover = () => {
+                if (cursorDot)  { cursorDot.classList.remove('hover'); }
+                if (cursorRing) { cursorRing.classList.remove('hover'); }
+                if (cursorGlass){ cursorGlass.classList.remove('hover'); }
+            };
+
+            // Add mouseenter/mouseleave to all migration UI interactive elements
+            const migrationInteractives = document.querySelectorAll(
+                '#migration-modal a, #migration-modal button, #migration-pill a, #migration-pill button'
+            );
+            migrationInteractives.forEach(el => {
+                el.addEventListener('mouseenter', suppressCursorHover);
+                el.addEventListener('mousemove', suppressCursorHover);
+            });
+
             // Show center modal after 5 seconds ONLY AFTER start button is clicked
             if (startBtn) {
                 startBtn.addEventListener('click', () => {
@@ -860,7 +881,7 @@
                     }, 5000);
                 });
             } else {
-                // Fallback if start-btn is missing
+                // Fallback
                 setTimeout(() => {
                     overlay.classList.add('active');
                     modal.classList.add('active');

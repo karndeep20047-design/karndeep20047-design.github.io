@@ -2866,7 +2866,7 @@
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    z-index: 999998;
+    z-index: 9998; /* BELOW cursor z-index (10001+) */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -2888,7 +2888,7 @@
     text-align: center;
     width: 90%;
     max-width: 400px;
-    z-index: 999999;
+    z-index: 9999;
     opacity: 0;
     pointer-events: none;
     transition: all 0.4s ease;
@@ -3009,17 +3009,19 @@
     background: #18181b;
     border: 1px solid #27272a;
     border-radius: 99px;
-    padding: 12px 24px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: calc(100% - 48px);
     max-width: 450px;
+    box-sizing: border-box;
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 999999;
+    z-index: 9999; /* BELOW cursor z-index (10001+) */
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    gap: 12px;
 }
 
 .migration-pill.active {
@@ -3030,41 +3032,61 @@
 
 .migration-pill-content {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1;
 }
 
 .migration-pill-title {
     font-family: 'Outfit', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin: 0;
     color: #fff;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .migration-pill-text {
     font-family: 'Outfit', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #aaa;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .migration-pill-yes {
     background: #fff;
     color: #000;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 99px;
     font-family: sans-serif;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     text-decoration: none;
-    margin-left: auto;
+    flex-shrink: 0;
     cursor: none !important;
     transition: transform 0.2s ease;
+    display: inline-block;
 }
 
 .migration-pill-yes:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 400px) {
+    .migration-pill {
+        border-radius: 20px;
+        padding: 12px 16px;
+        bottom: 16px;
+        width: calc(100% - 32px);
+    }
+    .migration-pill-title { font-size: 0.82rem; }
+    .migration-pill-text { font-size: 0.75rem; }
+    .migration-pill-yes { padding: 7px 12px; font-size: 0.78rem; }
 }
