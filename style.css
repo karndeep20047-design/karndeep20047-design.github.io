@@ -2946,7 +2946,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 0.9rem;
     text-decoration: underline;
-    cursor: pointer;
+    cursor: none !important;
     transition: color 0.3s ease;
 }
 
@@ -2975,23 +2975,29 @@
 .migration-flow-btn {
     width: 100%;
     display: block;
-    background: #000;
+    background: transparent;
     color: #fff;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 14px;
     border-radius: 99px;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
     position: relative;
     z-index: 2;
-    cursor: pointer;
+    cursor: none;
     transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .migration-flow-wrapper:hover .migration-flow-btn {
-    background: transparent;
-    color: #000;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
     font-weight: 600;
+}
+
+/* Fix Custom Cursor Z-Index over Migration UI */
+.cursor-dot, .cursor-ring, .cursor-glass-wrapper {
+    z-index: 9999999 !important;
 }
 
 /* Floating Pill */
@@ -3055,6 +3061,7 @@
     white-space: nowrap;
     text-decoration: none;
     margin-left: auto;
+    cursor: none !important;
     transition: transform 0.2s ease;
 }
 
