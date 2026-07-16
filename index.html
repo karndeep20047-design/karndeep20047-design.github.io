@@ -821,6 +821,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/hero-globe.js"></script>
     <script src="js/project-experience.js"></script>
+
+    <!-- Migration UI -->
+    <div class="migration-overlay" id="migration-overlay"></div>
+    <div class="migration-modal" id="migration-modal">
+        <h3 class="migration-title">Site Migrated</h3>
+        <p class="migration-text">You are viewing an archived version of my portfolio. A newer, better version awaits.</p>
+        <div class="migration-actions">
+            <a href="https://karndeeps-portfolio.vercel.app/" target="_blank" class="migration-flow-wrapper">
+                <button class="migration-flow-btn">YES, VIEW NEW PORTFOLIO</button>
+            </a>
+            <button class="migration-btn-no" id="migration-btn-no">No, continue with this one</button>
+        </div>
+    </div>
+
+    <div class="migration-pill" id="migration-pill">
+        <div class="migration-pill-content">
+            <h3 class="migration-pill-title">✨ New Portfolio Live</h3>
+            <p class="migration-pill-text">You're looking at the old version.</p>
+        </div>
+        <a href="https://karndeeps-portfolio.vercel.app/" target="_blank" class="migration-pill-yes">Switch Now</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('migration-overlay');
+            const modal = document.getElementById('migration-modal');
+            const pill = document.getElementById('migration-pill');
+            const btnNo = document.getElementById('migration-btn-no');
+
+            // Show center modal after 5 seconds
+            setTimeout(() => {
+                overlay.classList.add('active');
+                modal.classList.add('active');
+            }, 5000);
+
+            // Dismiss modal and trigger pill
+            const dismissModal = () => {
+                overlay.classList.remove('active');
+                modal.classList.remove('active');
+                
+                // Show pill after 3 seconds
+                setTimeout(() => {
+                    pill.classList.add('active');
+                }, 3000);
+            };
+
+            btnNo.addEventListener('click', dismissModal);
+            overlay.addEventListener('click', dismissModal);
+        });
+    </script>
 </body>
 
 </html>

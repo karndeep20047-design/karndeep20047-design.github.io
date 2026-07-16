@@ -2858,3 +2858,201 @@
                 display: none;
             }
         }
+
+/* --- Migration Redirection UI --- */
+.migration-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.migration-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.migration-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+}
+
+.migration-modal.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes breatheLamp {
+    0% { opacity: 0.6; box-shadow: 0 0 15px rgba(255,255,255,0.2), 0 0 30px rgba(255,255,255,0.1); }
+    50% { opacity: 1; box-shadow: 0 0 25px rgba(255,255,255,0.6), 0 0 50px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.1); }
+    100% { opacity: 0.6; box-shadow: 0 0 15px rgba(255,255,255,0.2), 0 0 30px rgba(255,255,255,0.1); }
+}
+
+.migration-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 5%; right: 5%; height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    animation: breatheLamp 4s ease-in-out infinite;
+    border-radius: 50%;
+}
+
+.migration-title {
+    color: #f97316;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.migration-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+}
+
+.migration-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.migration-btn-no {
+    background: none;
+    border: none;
+    color: #666;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.migration-btn-no:hover {
+    color: #fff;
+}
+
+/* Flow Wrapper Button */
+.migration-flow-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 99px;
+    overflow: hidden;
+    padding: 2px;
+    background: linear-gradient(90deg, #222, #888, #fff, #888, #222);
+    background-size: 200% auto;
+    animation: flowGradient 3s linear infinite;
+    text-decoration: none;
+}
+
+.migration-flow-btn {
+    width: 100%;
+    display: block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 99px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.migration-flow-wrapper:hover .migration-flow-btn {
+    background: transparent;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Floating Pill */
+.migration-pill {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 99px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 450px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.migration-pill.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+}
+
+.migration-pill-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.migration-pill-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    margin: 0;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.migration-pill-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin: 0;
+}
+
+.migration-pill-yes {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    text-decoration: none;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
+
+.migration-pill-yes:hover {
+    transform: scale(1.05);
+}
