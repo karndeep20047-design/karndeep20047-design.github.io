@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -821,6 +821,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/hero-globe.js"></script>
     <script src="js/project-experience.js"></script>
+    <!-- Redirect Popup -->
+    <div class="redirect-popup" id="redirect-popup">
+        <div class="redirect-modal">
+            <button class="redirect-close" id="redirect-close" aria-label="Close popup">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h3 class="redirect-title">New Portfolio Available</h3>
+            <p class="redirect-desc">This is my old portfolio. Would you like to switch to the new, updated one?</p>
+            <div class="redirect-actions">
+                <a href="https://karndeep20047-design.vercel.app/" target="_blank" class="btn-wrapper redirect-yes-wrapper" id="redirect-yes">
+                    <div class="btn-light bw-light"></div>
+                    <button class="gradient-btn bw-gradient">YES, VIEW NEW PORTFOLIO</button>
+                    <div class="gradient-layer bw-layer"></div>
+                    <div class="gradient-layer bw-layer"></div>
+                    <span class="text-overlay">YES, VIEW NEW PORTFOLIO</span>
+                </a>
+                <button class="redirect-no" id="redirect-no">No, continue with this one</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('redirect-popup').classList.add('active');
+            }, 5000);
+
+            const closePopup = () => {
+                document.getElementById('redirect-popup').classList.remove('active');
+            };
+
+            document.getElementById('redirect-close').addEventListener('click', closePopup);
+            document.getElementById('redirect-no').addEventListener('click', closePopup);
+            document.getElementById('redirect-yes').addEventListener('click', closePopup);
+        });
+    </script>
 </body>
 
 </html>
