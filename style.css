@@ -2954,7 +2954,7 @@
     color: #fff;
 }
 
-/* Flow Wrapper Button - dark by default, animated only on hover */
+/* Flow Wrapper Button - always animated, hover fills button with gradient */
 @keyframes flowGradient {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
@@ -2966,22 +2966,16 @@
     border-radius: 99px;
     overflow: hidden;
     padding: 2px;
-    background: #333;
-    background-size: 200% auto;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.migration-flow-wrapper:hover {
     background: linear-gradient(90deg, #222, #888, #fff, #888, #222);
     background-size: 200% auto;
     animation: flowGradient 3s linear infinite;
+    text-decoration: none;
 }
 
 .migration-flow-btn {
     width: 100%;
     display: block;
-    background: #0a0a0a;
+    background: #000;
     color: #fff;
     border: none;
     padding: 14px;
@@ -2991,11 +2985,12 @@
     position: relative;
     z-index: 2;
     cursor: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .migration-flow-wrapper:hover .migration-flow-btn {
-    background: #111;
+    background: transparent;
+    color: #000;
     font-weight: 600;
 }
 
@@ -3013,18 +3008,18 @@
     background: #18181b;
     border: 1px solid #27272a;
     border-radius: 99px;
-    padding: 10px 12px 10px 20px;
+    padding: 10px 16px 10px 16px;
     display: flex;
     align-items: center;
-    width: calc(100% - 48px);
-    max-width: 460px;
+    width: auto;
+    max-width: 400px;
     box-sizing: border-box;
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 9999;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    gap: 10px;
+    gap: 12px;
 }
 
 .migration-pill.active {
